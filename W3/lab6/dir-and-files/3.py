@@ -1,6 +1,8 @@
-def is_palindrome(s):
-    s = s.lower().replace(" ", "")
-    return s == s[::-1]
+import os
 
-print(is_palindrome("madam"))
-print(is_palindrome("hello"))
+def split_path(path):
+    if os.path.exists(path):
+        return os.path.split(path)
+    return None
+
+print(split_path("/home/user/file.txt"))

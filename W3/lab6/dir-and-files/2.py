@@ -1,8 +1,11 @@
-def count_case(s):
-    upper = sum(1 for c in s if c.isupper())
-    lower = sum(1 for c in s if c.islower())
-    return upper, lower
+import os
 
-text = "Hello World!"
-upper, lower = count_case(text)
-print("Up:", upper, "Low:", lower)
+def check_path_access(path):
+    return {
+        "exists": os.path.exists(path),
+        "readable": os.access(path, os.R_OK),
+        "writable": os.access(path, os.W_OK),
+        "executable": os.access(path, os.X_OK)
+    }
+
+print(check_path_access("test.txt"))
