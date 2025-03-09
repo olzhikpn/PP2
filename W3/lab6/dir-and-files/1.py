@@ -1,6 +1,6 @@
-from functools import reduce
+import os
 
-def multiply_list(numbers):
-    return reduce(lambda x, y: x * y, numbers)
+def list_files_and_dirs(path="."):
+    return os.listdir(path)
 
-print(multiply_list([1, 2, 3, 4, 5]))
+print(list_files_and_dirs())
